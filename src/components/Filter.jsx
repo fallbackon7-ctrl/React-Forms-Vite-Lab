@@ -1,16 +1,13 @@
 import React from "react";
 
-function Filter({ onCategoryChange }) {
+function Filter(props) {
   return (
-    <div className="Filter">
-      <input type="text" name="search" placeholder="Search..." />
-      <select name="filter" onChange={onCategoryChange}>
-        <option value="All">Filter by category</option>
-        <option value="Produce">Produce</option>
-        <option value="Dairy">Dairy</option>
-        <option value="Dessert">Dessert</option>
-      </select>
-    </div>
+    <input
+      type="text"
+      placeholder="Search..."
+      value={props.search ?? ""}
+      onChange={(event) => props.onSearchChange(event.target.value)}
+    />
   );
 }
 
